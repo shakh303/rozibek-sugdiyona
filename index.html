@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ro&rsquo;zibek &amp; Sug&rsquo;diyona — Taklifnoma</title>
+<meta name="description" content="Ro'zibek va Sug'diyonaning nikoh to'yi — 19-sentabr, 2026-yil, Muratali qishlog'i, «Risolat ona» to'yxonasi. Sizni to'yimizga taklif qilamiz!">
+<meta name="theme-color" content="#1F3A2E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ro'zibek &amp; Sug'diyona — Taklifnoma">
+<meta property="og:description" content="Sizni nikoh to'yimizga taklif qilamiz. 19-sentabr, 2026-yil — Muratali qishlog'i, «Risolat ona» to'yxonasi.">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B7%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ground:      #1F3A2E;
+  --ground-deep: #142219;
+  --ground-2:    #192E23;
+  --gold:        #C9A24B;
+  --gold-soft:   #E4C877;
+  --parchment:   #F1E4C9;
+  --terracotta:  #C1553D;
+  --sage:        #8AA38C;
+  --line: rgba(201,162,75,.30);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--ground-deep);
+  color:var(--parchment);
+  font-family:'Cormorant Garamond', Georgia, serif;
+  font-size:19px;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+body.locked{ overflow:hidden; height:100vh; }
+img{ max-width:100%; display:block; }
+a{ color:inherit; }
+
+.script{ font-family:'Pinyon Script', cursive; line-height:1.15; }
+.amp{ color:var(--gold-soft); font-size:.62em; font-family:'Cormorant Garamond',serif; font-style:italic; display:inline-block; margin:0 .2em; }
+.eyebrow{
+  font-family:'Cinzel', serif; font-weight:600;
+  font-size:.72rem; letter-spacing:.34em; text-transform:uppercase;
+  color:var(--gold-soft);
+}
+.rule{ display:flex; align-items:center; justify-content:center; gap:14px; margin:26px auto; max-width:280px; }
+.rule::before,.rule::after{ content:""; height:1px; flex:1; background:linear-gradient(90deg,transparent,var(--line),transparent); }
+.rule svg{ width:22px; height:33px; flex:none; color:var(--gold); }
+
+.frame{ position:absolute; inset:16px; border:1px solid var(--line); pointer-events:none; }
+.frame::before,.frame::after{ content:""; position:absolute; width:34px; height:34px; border:1px solid var(--gold); opacity:.6; }
+.frame::before{ top:-7px; left:-7px; border-right:0; border-bottom:0; }
+.frame::after{ bottom:-7px; right:-7px; border-left:0; border-top:0; }
+
+/* ---------- cover ---------- */
+#cover{
+  position:fixed; inset:0; z-index:100;
+  background: radial-gradient(120% 90% at 50% 0%, #24402F 0%, var(--ground-deep) 78%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:44px 24px; overflow:hidden;
+  transition:opacity .9s ease, visibility .9s;
+}
+#cover.hidden{ opacity:0; visibility:hidden; }
+#cover .inner{ position:relative; z-index:2; max-width:640px; animation:riseIn 1.3s ease both; }
+#cover .eyebrow{ margin-bottom:24px; animation:riseIn 1.3s .1s ease both; }
+#cover .names{ font-size:clamp(2.7rem,10vw,5.6rem); color:var(--parchment); text-shadow:0 2px 20px rgba(201,162,75,.22); }
+#cover .date{ font-family:'Cinzel',serif; font-weight:600; font-size:.78rem; letter-spacing:.3em; text-transform:uppercase; color:var(--sage); margin-top:18px; }
+
+.btn{
+  display:inline-flex; align-items:center; gap:12px;
+  margin-top:40px; padding:15px 36px;
+  font-family:'Cinzel', serif; font-weight:600;
+  font-size:.72rem; letter-spacing:.24em; text-transform:uppercase;
+  color:var(--gold-soft); background:transparent; border:1px solid var(--gold);
+  border-radius:999px; cursor:pointer;
+  transition:.45s cubic-bezier(.2,.7,.3,1); position:relative; overflow:hidden;
+}
+.btn span{ position:relative; z-index:2; }
+.btn::before{ content:""; position:absolute; inset:0; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform .5s cubic-bezier(.2,.7,.3,1); }
+.btn:hover{ color:var(--ground-deep); }
+.btn:hover::before{ transform:scaleX(1); }
+.btn:focus-visible{ outline:2px solid var(--gold-soft); outline-offset:3px; }
+
+/* falling petals (cover only) */
+.petal{ position:absolute; top:-8vh; color:var(--gold); opacity:0; animation:fall linear infinite; pointer-events:none; z-index:1; }
+@keyframes fall{
+  0%{ transform:translateY(-10vh) rotate(0deg); opacity:0; }
+  10%{ opacity:.5; } 90%{ opacity:.3; }
+  100%{ transform:translateY(112vh) rotate(360deg); opacity:0; }
+}
+@keyframes riseIn{ from{ opacity:0; transform:translateY(26px); } to{ opacity:1; transform:none; } }
+
+/* ---------- scroll reveal ---------- */
+.rv{ opacity:0; transform:translateY(30px); transition:opacity 1s ease, transform 1s cubic-bezier(.2,.7,.3,1); }
+.rv.in{ opacity:1; transform:none; }
+
+/* ---------- sections ---------- */
+section{ position:relative; padding:92px 22px; }
+.wrap{ max-width:720px; margin:0 auto; text-align:center; }
+h2{ font-weight:500; font-size:clamp(1.8rem,5vw,2.6rem); letter-spacing:.01em; text-wrap:balance; color:var(--parchment); }
+.lead{ color:var(--sage); font-size:1.08rem; font-style:italic; }
+
+/* hero */
+#hero{ min-height:100svh; display:flex; align-items:center; justify-content:center; background:var(--ground-deep); padding:70px 22px; }
+#hero .names{ font-size:clamp(2.6rem,9.5vw,5rem); margin:6px 0 0; }
+#hero .sub{ margin-top:16px; }
+.scroll-cue{
+  position:absolute; bottom:34px; left:50%; transform:translateX(-50%);
+  font-family:'Cinzel',serif; font-size:.6rem; letter-spacing:.32em; text-transform:uppercase;
+  color:var(--sage); display:flex; flex-direction:column; align-items:center; gap:10px; text-decoration:none;
+}
+.scroll-cue i{ display:block; width:1px; height:46px; background:linear-gradient(180deg,var(--gold),transparent); animation:cue 2.2s ease-in-out infinite; }
+@keyframes cue{ 0%,100%{ opacity:.25; transform:scaleY(.6); } 50%{ opacity:1; transform:scaleY(1); } }
+
+/* photo arch (reused motif) */
+.frame-wrap{ position:relative; width:min(60vw,220px); aspect-ratio:7/9; margin:0 auto 6px;
+  background:linear-gradient(160deg,var(--gold-soft),var(--gold) 60%,#9c7a34); clip-path:url(#archFrame); padding:8px; }
+.frame-inner{ width:100%; height:100%; clip-path:url(#archFrame); background:var(--ground); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.frame-inner .watermark{ position:absolute; top:52%; left:50%; width:140px; height:210px; transform:translate(-50%,-50%); color:var(--gold); opacity:.35; }
+.frame-inner .ph-caption{ position:relative; z-index:1; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:12.5px; color:var(--parchment); opacity:.8; padding:0 14px; line-height:1.5; }
+.seal{
+  position:relative; z-index:2; width:54px; height:54px; margin:-27px auto 20px; border-radius:50%;
+  background:radial-gradient(circle at 32% 28%,var(--gold-soft),var(--gold) 60%,#8a6a2c);
+  border:2px solid var(--ground-deep); box-shadow:0 6px 16px -4px rgba(0,0,0,.55);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Cinzel',serif; font-weight:600; font-size:12px; letter-spacing:.06em; color:var(--ground-deep);
+}
+
+/* verse */
+#verse{ background:var(--ground); }
+#verse .wrap{ max-width:600px; }
+#verse p{ font-style:italic; font-size:1.2rem; color:var(--parchment); }
+
+/* countdown */
+#count .grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; max-width:600px; margin:44px auto 0; }
+.cell{ background:var(--ground-2); border:1px solid var(--line); padding:22px 6px 16px; position:relative; }
+.cell b{ display:block; font-weight:500; font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,7vw,2.8rem); color:var(--gold-soft); line-height:1; font-variant-numeric:tabular-nums; }
+.cell small{ display:block; margin-top:10px; font-family:'Cinzel',serif; font-weight:600; font-size:.56rem; letter-spacing:.22em; text-transform:uppercase; color:var(--sage); }
+
+/* details */
+#details{ background:var(--ground); }
+.cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin:44px auto 0; max-width:720px; }
+.card{ background:var(--ground-2); border:1px solid var(--line); padding:34px 18px; }
+.card svg{ width:26px; height:26px; color:var(--gold); margin:0 auto 14px; }
+.card h3{ font-family:'Cinzel',serif; font-weight:600; font-size:.62rem; letter-spacing:.26em; text-transform:uppercase; color:var(--sage); margin-bottom:12px; }
+.card p{ font-size:1.22rem; line-height:1.5; color:var(--parchment); }
+.card p b{ font-weight:600; color:var(--gold-soft); font-size:1.06em; }
+.card p q{ quotes:"«" "»"; }
+
+/* closing */
+#closing{ min-height:70svh; display:flex; align-items:center; justify-content:center; background:var(--ground-deep); }
+#closing .names{ font-size:clamp(2.3rem,8.5vw,4.2rem); margin-top:12px; }
+
+footer{ padding:28px 22px 38px; text-align:center; font-family:'Cinzel',serif; font-weight:600; font-size:.6rem; letter-spacing:.24em; text-transform:uppercase; color:rgba(138,163,140,.7); border-top:1px solid var(--line); }
+
+/* ---------- sound toggle ---------- */
+#sound{
+  position:fixed; right:18px; bottom:18px; z-index:90;
+  width:46px; height:46px; border-radius:50%;
+  display:none; align-items:center; justify-content:center;
+  background:rgba(20,34,25,.78); border:1px solid var(--line); color:var(--gold-soft); cursor:pointer;
+  -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+#sound.show{ display:flex; animation:riseIn .9s ease both; }
+#sound:hover{ transform:scale(1.08); box-shadow:0 4px 18px rgba(0,0,0,.4); }
+#sound:focus-visible{ outline:2px solid var(--gold-soft); outline-offset:2px; }
+#sound svg{ width:19px; height:19px; }
+#sound .off{ display:none; }
+#sound.muted .on{ display:none; }
+#sound.muted .off{ display:block; }
+
+@media (max-width:520px){
+  #sound{ right:14px; bottom:14px; width:42px; height:42px; }
+  body{ font-size:18px; }
+  section{ padding:72px 18px; }
+  #count .grid{ grid-template-columns:repeat(2,1fr); }
+  .frame{ inset:12px; }
+}
+@media (prefers-reduced-motion:reduce){
+  *{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
+  .rv{ opacity:1; transform:none; }
+}
+</style>
+</head>
+<body class="locked">
+
+<!-- shared SVG defs: arch clip-path + reusable botanical sprig (lola) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <clipPath id="archFrame" clipPathUnits="objectBoundingBox">
+      <path d="M0,1 L0,0.47 C0,0.24 0.2,0.07 0.5,0.07 C0.8,0.07 1,0.24 1,0.47 L1,1 Z"/>
+    </clipPath>
+    <g id="sprig-shape" fill="currentColor">
+      <path d="M50,150 C48,120 52,90 50,60 L47,60 C49,90 45,120 47,150 Z"/>
+      <path d="M50,112 C34,106 18,114 12,130 C26,129 42,122 50,112 Z"/>
+      <path d="M50,97 C66,91 82,99 88,115 C74,114 58,107 50,97 Z"/>
+      <path d="M50,62 C34,56 26,36 33,16 C40,30 46,46 50,62 Z"/>
+      <path d="M50,62 C66,56 74,36 67,16 C60,30 54,46 50,62 Z"/>
+      <path d="M50,62 C43,46 43,20 50,6 C57,20 57,46 50,62 Z"/>
+    </g>
+  </defs>
+</svg>
+
+<!-- ================= COVER ================= -->
+<div id="cover">
+  <div class="frame"></div>
+  <div class="inner">
+    <p class="eyebrow">Siz taklif qilindingiz</p>
+    <div class="rule"><svg viewBox="0 0 100 150"><use href="#sprig-shape"/></svg></div>
+    <h1 class="script names">Ro&rsquo;zibek<span class="amp">va</span>Sug&rsquo;diyona</h1>
+    <p class="date">19&#8209;sentabr, 2026&#8209;yil</p>
+    <button class="btn" id="openBtn" type="button"><span>Taklifnomani ochish</span></button>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<section id="hero">
+  <div class="wrap">
+    <p class="eyebrow rv">Sizni taklif qilmoqchimiz</p>
+
+    <div class="frame-wrap rv">
+      <div class="frame-inner">
+        <span class="watermark"><svg viewBox="0 0 100 150"><use href="#sprig-shape"/></svg></span>
+        <p class="ph-caption">Surat<br>tez orada qo&rsquo;shiladi</p>
+      </div>
+    </div>
+    <div class="seal rv">R&nbsp;&amp;&nbsp;S</div>
+
+    <h1 class="script names rv">Ro&rsquo;zibek<span class="amp">va</span>Sug&rsquo;diyona</h1>
+    <p class="eyebrow sub rv" style="letter-spacing:.3em;color:var(--sage);margin-top:6px">
+      19&nbsp;&middot;&nbsp;09&nbsp;&middot;&nbsp;2026
+    </p>
+  </div>
+  <a href="#verse" class="scroll-cue"><span>pastga</span><i></i></a>
+</section>
+
+<!-- ================= VERSE ================= -->
+<section id="verse">
+  <div class="wrap">
+    <div class="rule rv"><svg viewBox="26 0 48 66"><use href="#sprig-shape"/></svg></div>
+    <p class="rv">
+      Hayotimizning eng baxtli kunida yonimizda bo&rsquo;lishingizni behad istardik.
+      Sizni to&rsquo;y marosimimizga izzat&#8209;ehtirom bilan taklif etamiz.
+    </p>
+  </div>
+</section>
+
+<!-- ================= COUNTDOWN ================= -->
+<section id="count">
+  <div class="wrap">
+    <p class="eyebrow rv">To&rsquo;yimizgacha</p>
+    <div class="rule rv">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.6 1.6"/><path d="M9 2h6"/></svg>
+    </div>
+    <div class="grid rv">
+      <div class="cell"><b id="dd">00</b><small>kun</small></div>
+      <div class="cell"><b id="hh">00</b><small>soat</small></div>
+      <div class="cell"><b id="mm">00</b><small>daqiqa</small></div>
+      <div class="cell"><b id="ss">00</b><small>soniya</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DETAILS ================= -->
+<section id="details">
+  <div class="wrap">
+    <p class="eyebrow rv">Bizning to&rsquo;yimizga</p>
+    <h2 class="rv" style="margin-top:16px">Marhamat qilib tashrif<br>buyurishingizni so&rsquo;raymiz</h2>
+    <div class="rule rv"><svg viewBox="0 0 100 150"><use href="#sprig-shape"/></svg></div>
+
+    <div class="cards rv">
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        <h3>Sana</h3>
+        <p><b>19&#8209;sentabr</b><br>2026&#8209;yil, shanba</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/></svg>
+        <h3>Vaqt</h3>
+        <p><b>18:00</b><br>da boshlanadi</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="2.8"/></svg>
+        <h3>Manzil</h3>
+        <p>Muratali qishlog&rsquo;i<br><q>Risolat ona</q> to&rsquo;yxonasi</p>
+      </div>
+    </div>
+
+    <a href="https://share.google/naBVT7JBJatVBK1NK" class="btn rv" style="margin-top:38px" target="_blank" rel="noopener noreferrer"><span>Manzilni xaritada ko&rsquo;rish</span></a>
+  </div>
+</section>
+
+<!-- ================= CLOSING ================= -->
+<section id="closing">
+  <div class="wrap">
+    <div class="rule rv"><svg viewBox="26 0 48 66"><use href="#sprig-shape"/></svg></div>
+    <h2 class="rv">Sizni kutamiz!</h2>
+    <p class="script names rv" style="color:var(--parchment)">Ro&rsquo;zibek<span class="amp">va</span>Sug&rsquo;diyona</p>
+  </div>
+</section>
+
+<footer>Ro&rsquo;zibek &amp; Sug&rsquo;diyona &middot; 19.09.2026</footer>
+
+<audio id="bgm" src="assets/audio/music.mp3" loop preload="metadata"></audio>
+
+<button id="sound" class="muted" type="button" title="Musiqa" aria-label="Musiqani yoqish yoki o'chirish">
+  <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path d="M15.4 8.6a4.8 4.8 0 010 6.8"/><path d="M18.4 5.6a9 9 0 010 12.8"/></svg>
+  <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path d="M16.5 9.5l5 5M21.5 9.5l-5 5"/></svg>
+</button>
+
+<script>
+(function(){
+  /* ---- musiqa ---- */
+  var bgm = document.getElementById('bgm');
+  var sound = document.getElementById('sound');
+  var VOL = .65, fadeTimer = null;
+  bgm.volume = VOL;
+
+  function fadeIn(){
+    clearInterval(fadeTimer);
+    bgm.volume = 0;
+    fadeTimer = setInterval(function(){
+      var v = bgm.volume + .04;
+      if(v >= VOL){ bgm.volume = VOL; clearInterval(fadeTimer); }
+      else { bgm.volume = v; }
+    }, 90);
+  }
+
+  function startMusic(fade){
+    var p = bgm.play();
+    function ok(){ sound.classList.remove('muted'); if(fade) fadeIn(); }
+    if(p && p.then){ p.then(ok).catch(function(){ sound.classList.add('muted'); }); }
+    else { ok(); }
+  }
+
+  sound.addEventListener('click', function(){
+    if(bgm.paused){ startMusic(false); }
+    else { clearInterval(fadeTimer); bgm.pause(); sound.classList.add('muted'); }
+  });
+
+  /* ---- cover open ---- */
+  var cover = document.getElementById('cover');
+  var btn = document.getElementById('openBtn');
+  btn.addEventListener('click', function(){
+    cover.classList.add('hidden');
+    document.body.classList.remove('locked');
+    window.scrollTo({top:0});
+    setTimeout(function(){ cover.style.display='none'; }, 950);
+    sound.classList.add('show');
+    startMusic(true);
+  });
+
+  /* ---- falling petals (lola/tulip silhouette) ---- */
+  var petalSvg = '<svg viewBox="0 0 100 150"><use href="#sprig-shape"/></svg>';
+  for(var i=0;i<12;i++){
+    var p = document.createElement('div');
+    p.className = 'petal';
+    p.innerHTML = petalSvg;
+    p.style.left = (Math.random()*100)+'%';
+    var s = 16 + Math.random()*18;
+    p.style.width = s+'px'; p.style.height = (s*1.5)+'px';
+    p.style.animationDuration = (12 + Math.random()*14)+'s';
+    p.style.animationDelay = (-Math.random()*20)+'s';
+    cover.appendChild(p);
+  }
+
+  /* ---- countdown ---- */
+  var target = new Date('2026-09-19T18:00:00+05:00').getTime();
+  var el = {d:document.getElementById('dd'),h:document.getElementById('hh'),
+            m:document.getElementById('mm'),s:document.getElementById('ss')};
+  function pad(n){ return (n<10?'0':'')+n; }
+  function tick(){
+    var diff = target - Date.now();
+    if(diff < 0) diff = 0;
+    var d = Math.floor(diff/86400000);
+    var h = Math.floor(diff%86400000/3600000);
+    var m = Math.floor(diff%3600000/60000);
+    var s = Math.floor(diff%60000/1000);
+    el.d.textContent = pad(d); el.h.textContent = pad(h);
+    el.m.textContent = pad(m); el.s.textContent = pad(s);
+  }
+  tick(); setInterval(tick,1000);
+
+  /* ---- scroll reveal ---- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(function(n,i){
+    n.style.transitionDelay = (Math.min(i,4)*70)+'ms';
+    io.observe(n);
+  });
+})();
+</script>
+</body>
+</html>
