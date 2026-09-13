@@ -15,7 +15,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B7%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -45,8 +45,8 @@ body.locked{ overflow:hidden; height:100vh; }
 img{ max-width:100%; display:block; }
 a{ color:inherit; }
 
-.script{ font-family:'Pinyon Script', cursive; line-height:1.15; }
-.amp{ color:var(--gold-soft); font-size:.62em; font-family:'Cormorant Garamond',serif; font-style:italic; display:inline-block; margin:0 .2em; }
+.script{ font-family:'Cormorant Garamond', Georgia, serif; font-weight:400; line-height:1.06; }
+.amp{ color:var(--gold-soft); font-size:.56em; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400; display:inline-block; margin:0 .2em; vertical-align:.06em; }
 .eyebrow{
   font-family:'Cinzel', serif; font-weight:600;
   font-size:.72rem; letter-spacing:.34em; text-transform:uppercase;
@@ -56,23 +56,54 @@ a{ color:inherit; }
 .rule::before,.rule::after{ content:""; height:1px; flex:1; background:linear-gradient(90deg,transparent,var(--line),transparent); }
 .rule svg{ width:22px; height:33px; flex:none; color:var(--gold); }
 
-.frame{ position:absolute; inset:16px; border:1px solid var(--line); pointer-events:none; }
-.frame::before,.frame::after{ content:""; position:absolute; width:34px; height:34px; border:1px solid var(--gold); opacity:.6; }
-.frame::before{ top:-7px; left:-7px; border-right:0; border-bottom:0; }
-.frame::after{ bottom:-7px; right:-7px; border-left:0; border-top:0; }
-
 /* ---------- cover ---------- */
+/* Kelin-kuyov surati kelgach: shu qatorni oching va rasm nomini yozing —
+   background-image:url(assets/images/cover.jpg); background-size:cover; background-position:center; */
 #cover{
   position:fixed; inset:0; z-index:100;
-  background: radial-gradient(120% 90% at 50% 0%, #24402F 0%, var(--ground-deep) 78%);
+  background:
+    radial-gradient(90% 60% at 50% 12%, rgba(228,200,119,.16) 0%, transparent 62%),
+    radial-gradient(130% 90% at 50% 100%, rgba(0,0,0,.55) 0%, transparent 58%),
+    radial-gradient(150% 120% at 50% 0%, #24402F 0%, var(--ground-deep) 72%);
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   text-align:center; padding:44px 24px; overflow:hidden;
   transition:opacity .9s ease, visibility .9s;
 }
 #cover.hidden{ opacity:0; visibility:hidden; }
-#cover .inner{ position:relative; z-index:2; max-width:640px; animation:riseIn 1.3s ease both; }
-#cover .eyebrow{ margin-bottom:24px; animation:riseIn 1.3s .1s ease both; }
-#cover .names{ font-size:clamp(2.7rem,10vw,5.6rem); color:var(--parchment); text-shadow:0 2px 20px rgba(201,162,75,.22); }
+#cover .inner{ position:relative; z-index:2; max-width:420px; animation:riseIn 1.3s ease both; }
+#cover .eyebrow{ margin-bottom:22px; animation:riseIn 1.3s .1s ease both; }
+#cover .names{ font-size:clamp(2.5rem,11vw,3.8rem); color:var(--parchment); text-shadow:0 2px 24px rgba(0,0,0,.4); }
+
+.rule-mini{ display:flex; align-items:center; justify-content:center; gap:12px; margin:0 auto 22px; max-width:210px; }
+.rule-mini .ln{ flex:1; height:1px; background:linear-gradient(90deg,transparent,var(--line)); }
+.rule-mini .ln.r{ background:linear-gradient(90deg,var(--line),transparent); }
+.rule-mini .dot{ width:34px; height:34px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex-shrink:0; background:rgba(20,34,25,.35); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px); }
+.rule-mini .dot svg{ width:14px; height:21px; color:var(--gold); }
+
+.verse-ar{ font-family:'Amiri', serif; font-weight:700; font-size:1.5rem; color:var(--gold-soft); margin:22px 0 9px; line-height:1.7; direction:rtl; }
+.verse-uz{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:var(--parchment); opacity:.9; max-width:300px; margin:0 auto; line-height:1.6; }
+.verse-cite{ font-family:'Cinzel',serif; font-weight:600; font-size:.6rem; letter-spacing:.22em; text-transform:uppercase; color:var(--sage); margin-top:9px; }
+
+.btn-glass{
+  display:inline-flex; align-items:center; gap:14px;
+  margin-top:32px; padding:7px 26px 7px 7px;
+  background:rgba(20,34,25,.45); border:1px solid rgba(201,162,75,.4);
+  border-radius:999px; cursor:pointer;
+  -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+  color:var(--parchment);
+  font-family:'Cinzel',serif; font-weight:600; font-size:.7rem; letter-spacing:.2em; text-transform:uppercase;
+  transition:background .25s ease, transform .15s ease;
+}
+.btn-glass:hover{ background:rgba(20,34,25,.72); transform:translateY(-1px); }
+.btn-glass:focus-visible{ outline:2px solid var(--gold-soft); outline-offset:3px; }
+.btn-glass .btn-ico{
+  width:36px; height:36px; border-radius:50%; flex-shrink:0;
+  background:linear-gradient(160deg,var(--gold-soft),var(--gold) 70%,#9c7a34);
+  display:flex; align-items:center; justify-content:center; color:var(--ground-deep);
+}
+.btn-glass .btn-ico svg{ width:15px; height:15px; }
+.btn-glass .btn-arrow{ color:var(--gold-soft); font-size:1rem; transition:transform .25s ease; }
+.btn-glass:hover .btn-arrow{ transform:translateX(3px); }
 #cover .date{ font-family:'Cinzel',serif; font-weight:600; font-size:.78rem; letter-spacing:.3em; text-transform:uppercase; color:var(--sage); margin-top:18px; }
 
 .btn{
@@ -90,13 +121,6 @@ a{ color:inherit; }
 .btn:hover::before{ transform:scaleX(1); }
 .btn:focus-visible{ outline:2px solid var(--gold-soft); outline-offset:3px; }
 
-/* falling petals (cover only) */
-.petal{ position:absolute; top:-8vh; color:var(--gold); opacity:0; animation:fall linear infinite; pointer-events:none; z-index:1; }
-@keyframes fall{
-  0%{ transform:translateY(-10vh) rotate(0deg); opacity:0; }
-  10%{ opacity:.5; } 90%{ opacity:.3; }
-  100%{ transform:translateY(112vh) rotate(360deg); opacity:0; }
-}
 @keyframes riseIn{ from{ opacity:0; transform:translateY(26px); } to{ opacity:1; transform:none; } }
 
 /* ---------- scroll reveal ---------- */
@@ -213,13 +237,27 @@ footer{ padding:28px 22px 38px; text-align:center; font-family:'Cinzel',serif; f
 
 <!-- ================= COVER ================= -->
 <div id="cover">
-  <div class="frame"></div>
   <div class="inner">
-    <p class="eyebrow">Siz taklif qilindingiz</p>
-    <div class="rule"><svg viewBox="0 0 100 150"><use href="#sprig-shape"/></svg></div>
+    <p class="eyebrow">Sizga taklifnoma keldi</p>
+
+    <div class="rule-mini">
+      <span class="ln"></span>
+      <span class="dot"><svg viewBox="26 0 48 66"><use href="#sprig-shape"/></svg></span>
+      <span class="ln r"></span>
+    </div>
+
     <h1 class="script names">Ro&rsquo;zibek<span class="amp">va</span>Sug&rsquo;diyona</h1>
-    <p class="date">19&#8209;sentabr, 2026&#8209;yil</p>
-    <button class="btn" id="openBtn" type="button"><span>Taklifnomani ochish</span></button>
+    <p class="date">19&nbsp;&middot;&nbsp;09&nbsp;&middot;&nbsp;2026</p>
+
+    <p class="verse-ar" lang="ar">وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
+    <p class="verse-uz">&ldquo;Va orangizga muhabbat va marhamat soldi.&rdquo;</p>
+    <p class="verse-cite">Rum surasi, 21&#8209;oyat</p>
+
+    <button class="btn-glass" id="openBtn" type="button">
+      <span class="btn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10.5V7.5a5 5 0 0110 0v3"/><rect x="5" y="10.5" width="14" height="9.5" rx="2"/></svg></span>
+      <span class="btn-txt">Ochish</span>
+      <span class="btn-arrow">&rarr;</span>
+    </button>
   </div>
 </div>
 
@@ -359,20 +397,6 @@ footer{ padding:28px 22px 38px; text-align:center; font-family:'Cinzel',serif; f
     sound.classList.add('show');
     startMusic(true);
   });
-
-  /* ---- falling petals (lola/tulip silhouette) ---- */
-  var petalSvg = '<svg viewBox="0 0 100 150"><use href="#sprig-shape"/></svg>';
-  for(var i=0;i<12;i++){
-    var p = document.createElement('div');
-    p.className = 'petal';
-    p.innerHTML = petalSvg;
-    p.style.left = (Math.random()*100)+'%';
-    var s = 16 + Math.random()*18;
-    p.style.width = s+'px'; p.style.height = (s*1.5)+'px';
-    p.style.animationDuration = (12 + Math.random()*14)+'s';
-    p.style.animationDelay = (-Math.random()*20)+'s';
-    cover.appendChild(p);
-  }
 
   /* ---- countdown ---- */
   var target = new Date('2026-09-19T18:00:00+05:00').getTime();
