@@ -31,7 +31,7 @@ Hammasi `index.html` ichida. Qidiring va almashtiring:
 | Xarita havolasi | `<a href="...` — Google Maps havolasi allaqachon qo'yilgan |
 | Orqaga hisoblagich | JS ichidagi `new Date('2026-09-19T18:00:00+05:00')` — vaqt aniqlangach shu yerni ham yangilang |
 | Rang | CSS boshidagi `--gold:#C9A24B`, `--ground:#1F3A2E` |
-| Kelin-kuyov surati | Hero bo'limidagi arka-ramka hozircha bo'sh (naqsh + "Surat tez orada qo'shiladi"). Surat kelgach: `assets/images/` ga qo'ying va `.frame-inner` ichiga `<img>` qo'shing |
+| Kelin-kuyov surati | `assets/images/couple.jpg` — Hero bo'limidagi arka-ramkada ko'rinadi |
 | Musiqa | `assets/audio/music.mp3` faylini almashtiring (nomi o'zgarmasin) |
 | Musiqa balandligi | JS ichidagi `var VOL = .65` |
 
